@@ -5,7 +5,7 @@ const Body = Matter.Body;
 const Constraint = Matter.Constraint;
 
 var batman;
-var maxDrops = 50;
+var maxDrops = 100;
 var drops = [];
 var thunder,thundAni1,thundAni2,thundAni3,thundAni4;
 
@@ -29,12 +29,13 @@ function setup(){
 }
 
 function draw(){
+    Engine.update(engine);
     background(0);
     batman.display();
     
     for(i = 0;i < maxDrops; i++){
         drops[i].display();
-       // drops[i].updatePos();
+        drops[i].updatePos();
     }
 
     spawnThunder();
